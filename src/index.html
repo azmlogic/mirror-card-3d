@@ -10,13 +10,44 @@
   <body>
     <div class="scene">
       <div class="card" id="card">
+        <!-- Vorderseite -->
         <div class="card__face card__face--front">
-          <!-- Vorderseite Inhalt -->
-          <h2>– MIRROR CARD –</h2>
+          <h2>MIRROR CARD</h2>
+          <div class="logo">
+            <svg
+              width="80"
+              height="50"
+              viewBox="0 0 200 120"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="80" cy="60" r="50" fill="#EB001B" />
+              <circle cx="120" cy="60" r="50" fill="#F79E1B" />
+              <circle
+                cx="100"
+                cy="60"
+                r="50"
+                fill="#FF5F00"
+                fill-opacity="0.7"
+              />
+            </svg>
+          </div>
         </div>
+
+        <!-- Rückseite -->
         <div class="card__face card__face--back">
-          <!-- Rückseite Inhalt -->
-          <p>Rückseite wird später gestaltet</p>
+          <!-- Magnetstreifen -->
+          <div class="magnetic-strip"></div>
+
+          <!-- Unterschrift + CVV -->
+          <div class="cvv-area">
+            <div class="signature-box">
+              <span class="signature-text">Your Signature</span>
+            </div>
+            <div class="cvv-code">123</div>
+          </div>
+
+          <!-- Hinweis oder Info -->
+          <div class="disclaimer">Not a valid payment method</div>
         </div>
       </div>
     </div>
