@@ -1,57 +1,108 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Mirror Card 3D Prototype</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Mirror Card 3D Prototype</title>
+</head>
+<body>
+  <div class="scene">
+    <div class="card" id="card">
 
-  <body>
-    <div class="scene">
-      <div class="card" id="card">
-        <!-- Vorderseite -->
-        <div class="card__face card__face--front">
-          <h2>MIRROR CARD</h2>
-          <div class="logo">
-            <svg
-              width="80"
-              height="50"
-              viewBox="0 0 200 120"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="80" cy="60" r="50" fill="#EB001B" />
-              <circle cx="120" cy="60" r="50" fill="#F79E1B" />
-              <circle
-                cx="100"
-                cy="60"
-                r="50"
-                fill="#FF5F00"
-                fill-opacity="0.7"
-              />
-            </svg>
-          </div>
+      <!-- Vorderseite -->
+      <div class="card__face card__face--front">
+        <h2 class="card-title">MIRROR CARD</h2>
+
+        <div class="logo">
+          <!-- Trade-Republic-ohne-Logos-SVG -->
+          <svg width="80" height="50" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="80" cy="60" r="50" fill="#EB001B" />
+            <circle cx="120" cy="60" r="50" fill="#F79E1B" />
+            <circle cx="100" cy="60" r="50" fill="#FF5F00" fill-opacity="0.7" />
+          </svg>
         </div>
 
-        <!-- Rückseite -->
-        <div class="card__face card__face--back">
+        <div class="chip">
+          <!-- 3D-Chip-SVG -->
+          <svg width="50" height="35" viewBox="0 0 50 35" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="chipGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#fff8d1" />
+                <stop offset="40%" stop-color="#f6c953" />
+                <stop offset="70%" stop-color="#d4a72b" />
+                <stop offset="100%" stop-color="#a67c00" />
+              </linearGradient>
+              <linearGradient id="lightReflection" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="100%" stop-color="transparent" />
+              </linearGradient>
+            </defs>
+            
+            <!-- Außenkante -->
+            <rect x="0" y="0" width="50" height="35" rx="6"
+                  fill="url(#chipGradient)" stroke="#666" stroke-width="1.5" />
+            <!-- Innenkante-->
+            <rect x="6" y="5" width="38" height="25" rx="3"
+                  fill="none" stroke="#888" stroke-width="1" />
+            <!-- Kontaktlinien -->
+            <path d="M10 10 h30 M10 17.5 h30 M10 25 h30"
+                  stroke="#777" stroke-width="1.2" />
+            <!-- Lichtreflex -->
+            <rect x="0" y="0" width="50" height="35" rx="6"
+                  fill="url(#lightReflection)" opacity="0.2" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Rückseite -->
+      <div class="card__face card__face--back">
+        <div class="magnetic-strip"></div>
+        <div class="back-content">
+          
           <!-- Magnetstreifen -->
-          <div class="magnetic-strip"></div>
+          
 
           <!-- Unterschrift + CVV -->
           <div class="cvv-area">
             <div class="signature-box">
-              <span class="signature-text">Your Signature</span>
+              <!-- AZMLOGIC als SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="100">
+                <text x="0" y="45" font-family="Arial, sans-serif" font-size="40" fill="#000000" font-weight="bold">AZM</text>
+                <text x="89" y="45" font-family="Arial, sans-serif" font-size="30" fill="#000000">LOGIC</text>
+              </svg>
             </div>
-            <div class="cvv-code">123</div>
+            <div class="cvv-code">933</div>
           </div>
 
-          <!-- Hinweis oder Info -->
-          <div class="disclaimer">Not a valid payment method</div>
+          <!-- VISA Logo mit Shine -->
+          <div class="visa-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 150" width="100" height="auto">
+              <defs>
+                <linearGradient id="visaSilver" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#f5f5f5" />
+                  <stop offset="50%" stop-color="#cccccc" />
+                  <stop offset="100%" stop-color="#999999" />
+                </linearGradient>
+                <linearGradient id="visaShine" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="transparent" />
+                  <stop offset="50%" stop-color="white" stop-opacity="0.6" />
+                  <stop offset="100%" stop-color="transparent" />
+                  <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="3s" repeatCount="indefinite" />
+                </linearGradient>
+                <mask id="shineMask"><rect width="400" height="150" fill="url(#visaShine)" /></mask>
+              </defs>
+              <text x="0" y="100" font-family="Arial Black, sans-serif" font-size="100" fill="url(#visaSilver)">VISA</text>
+              <text x="0" y="100" font-family="Arial Black, sans-serif" font-size="100" fill="white" mask="url(#shineMask)" opacity="0.6">VISA</text>
+            </svg>
+          </div>
+
         </div>
       </div>
-    </div>
 
-    <script src="script.js"></script>
-  </body>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>

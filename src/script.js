@@ -55,3 +55,7 @@ card.addEventListener('pointerup', (e) => {
         autoRotate = true;
     })
 }, 2000);
+
+card.addEventListener('click', () => {
+  card.classList.toggle('is-flipped');
+});
