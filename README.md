@@ -3,6 +3,10 @@
 Interactive 3D credit‑card clone with mirror surface effect  
 Built with HTML, CSS and vanilla JavaScript.  
 
+## Vorschau
+
+![Preview](./src/assets/screenshot.png)
+
 ## Features
 - Rotatable card using mouse drag / touch
 - CSS mirror‑like reflective surface
