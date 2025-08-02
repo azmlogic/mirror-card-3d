@@ -6,6 +6,7 @@ Built with HTML, CSS and vanilla JavaScript.
 ## Vorschau
 
 ![Preview](./src/assets/screenshot.png)
+![Preview](./src/assets/screenshot2.png)
 
 ## Features
 - Rotatable card using mouse drag / touch
